@@ -1,0 +1,93 @@
+How to build a blog in rails guide/cheatsheet
+
+open terminal
+  cd into where your new blog should go
+  type..
+    <!-- this is the name of the new blog -->
+    rails new blog-name 
+    <!-- this creates all of the files for blog -->
+
+open sublime
+  open newly created project
+  make sure all of the files are there
+
+sanity check
+  open terminal
+  type..
+    rails s
+  open chrome
+  should see the rails guide
+
+open terminal
+  type..
+    <!-- this initializes empty repository -->
+    git init
+    <!-- make sure all the files are untracked (in red) -->
+    git status
+    <!-- add files to be tracked -->
+    git add .
+    <!-- make sure all the files are now tracked (in green) -->
+    git status
+    <!-- make initial commit -->
+    git commit -m "initial commit"
+
+
+<!-- Think about new blog for a sec...what do you want to be able to do?
+        create a user (sign-up)
+        login/logout (sign-in/sign-out)
+        create posts
+        edit/delete posts
+        add comments
+        admin user ability to delete comments (if spam or unwanted attention)
+ -->
+
+<!-- Let's start with posts -->
+
+open terminal
+  type..
+    <!-- this creates the view dir but not the file -->
+    rails g controller posts
+
+<!-- Now let's put in some routes -->
+open sublime
+  open config > routes.rb
+  type ..
+    resources :posts
+    <!-- if you want the posts to be in the root of your blog -->
+    <!-- root = where it is going... posts = controller... index = action -->
+    root "posts#index"
+
+<!-- Now you know the PostsController needs the index action -->
+open PostsController
+  <!-- define index action -->
+  type..
+    def index
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
