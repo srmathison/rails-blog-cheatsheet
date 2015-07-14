@@ -1,5 +1,7 @@
 How to build a blog in rails guide/cheatsheet
-<!-- to read comments clearly make sure text in lower right reads "markdown" -->
+  <!-- to read comments clearly make sure text in lower right reads "markdown" -->
+  <!-- following video tutorial on https://www.youtube.com/watch?v=BI_VnnOLSKY
+  https://mackenziechild.me/12-in-12/2/ -->
 
 open terminal
   cd into where your new blog should go
@@ -158,7 +160,9 @@ open > layout > application.html.erb
   create a sidebar
   <!-- check code -->
 
-
+Note..
+  for the styling of this tutorial the css/scss will not be pseudo coded. Can do at later point. Imported downloaded css/scss. 
+  <!-- check code on application.scss _normalize.scss -->
 
 
 
