@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
+  # this make is so we can go to /about page instead of /pages/about
+  get '/about', to: 'pages#about' 
 end

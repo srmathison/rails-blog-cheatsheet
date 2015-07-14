@@ -161,6 +161,7 @@ Note..
 open > layout > application.html.erb
   create a sidebar
   <!-- check code -->
+  <!-- for now in the sidebar just enter the information for the Blog, root_path. Just type the word "about" in it's own li. We will adjust this later so it makes sense in the process -->
   create main content
   <!-- check code -->
 
@@ -320,6 +321,45 @@ open model > post.rb
 
 open terminal
   git commit
+
+Note..
+  Up until now the about page has been static. We want to create the about page now. 
+
+open terminal
+  type..
+    rails g controller pages
+
+open PagesController
+  <!-- we know we want an about action... -->
+  def about
+  end
+
+open config > routes.rb
+  create route for about
+  <!-- we don't need full resources like delete/update/destroy -->
+  <!-- check code -->
+
+Note..
+  Now we need to create views for about template
+
+open views > pages
+  create new page about.html.erb
+
+open about.html.erb
+<!-- check code -->
+
+Note..
+  Now let's take care of that About button we left static a few steps up, right now it is not linking anywhere. At this point if I wanted to view the about page I would have to enter /about in the url.
+
+open layouts > application.html.erb
+<!-- remember that about button without a link? -->
+  now change the word "about" to a link_to with the erb tag and about path as shown.
+  <!-- check code -->
+  add current page if and elsif 
+  <!-- check code -->
+
+
+
 
 
 

@@ -14,7 +14,7 @@
       <li class="category">Website</li>
       <!-- this will link to root of application, listing out blog posts -->
       <li><%= link_to "Blog", root_path %></li>
-      <li>About</li>
+      <li><%= link_to "About", about_path %></li>
     </ul>
 
     <ul>
@@ -32,8 +32,16 @@
   <!-- separates from sidebar content -->
   <div id="main_content">
     <div id="header">
-      
+
+      <% if current_page?(root_path) %>
       <p>All Posts</p>
+      <!-- can wait to add this until after you create your about page and button -->
+      <% elsif current_page?(about_path) %>
+      <p> About </p>
+      <% else %>
+        <%= link_to "Back to all posts", root_path %>
+        <% end %>
+
       <div class="buttons">
         <!-- button to create new post -->
         <button class="button"><%=link_to "New Post", new_post_path %></button>
