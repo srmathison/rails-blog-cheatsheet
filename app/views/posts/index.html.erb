@@ -1,0 +1,17 @@
+<!-- create a loop to go through each of the posts -->
+<% @posts.each do |post| %>
+  <div class="post_wrapper">
+    <h2 class="title">
+      <!-- links to a single post. that post title, post path -->
+      <%= link_to post.title, post %>
+    </h2>
+    <p class="body">
+      <!-- links to a single post. that post body, post path -->
+      <%= link_to post.body, post %>
+    </p>
+    <p class="date">
+      <!-- this will show  mm/dd/yyyy format -->
+      <%= post.created_at.strftime("%m, %d, %y") %>
+    </p>
+  </div>
+<% end %>

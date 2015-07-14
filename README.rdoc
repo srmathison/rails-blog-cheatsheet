@@ -45,7 +45,8 @@ open terminal
 
 open terminal
   type..
-    <!-- this creates the view dir but not the file -->
+    <!-- this creates the view dir but not the view file -->
+    <!-- can type rails g resource posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
     rails g controller posts
 
 <!-- Now let's put in some routes -->
@@ -63,6 +64,139 @@ open PostsController
   type..
     def index
     end
+
+<!-- since we generated a controller vs resource we don't have a view > posts > index.html.erb file ...resource does this for you. -->
+<!-- Now we have to create the file manually -->
+open app > views > posts 
+  open blank file 
+  <!-- make sure saves to views > posts -->
+  save as index.html.erb
+  type ..
+    <!-- filler text for sanity check -->
+    this is posts index file
+  open browser and refresh to check for text on screen
+
+<!-- Next we want the ability to create new posts. -->
+open PostsControlelr
+  type..
+    def new
+    end
+<!-- sanity check -->
+open browser
+  open /posts/new
+  <!-- notice we don't have a template, so let's create one -->
+
+create a view >posts new.html.erb file 
+open new.html.erb
+  create new post form
+    <!-- check posts new.html.erb for code -->
+
+<!-- Now we have a new post form but not a model to go with it to save our data-->
+open terminal
+  type..
+  <!-- creates migration and model with info given -->
+  rails g model Post title:string body:text
+  <!-- check files after to confirm -->
+  <!-- migrate database -->
+  rake db:migrate
+
+open PostController
+  <!-- in order to create new posts have to define create -->
+  type..
+    def create
+    <!-- check code -->
+    end
+<!-- add private params and check code -->
+
+create posts show.html.erb file
+<!-- this is where the post lives -->
+open show.html.file
+<!-- check code -->
+
+open PostController
+<!-- define show -->
+  type..
+  def show
+  <!-- check code -->
+  end
+
+<!-- sanity check -->
+<!-- open browser and create post
+any errors review the code -->
+
+<!-- Now we want to list all of the posts at root of application -->
+edit index action in PostController
+<!-- check code -->
+edit index.html.erb file
+<!-- check code -->
+
+<!-- sanity check -->
+<!-- create multiple posts and make sure they display with the info you want -->
+
+open terminal
+  git commit the changes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
