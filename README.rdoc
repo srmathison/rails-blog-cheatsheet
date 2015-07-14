@@ -1,4 +1,5 @@
 How to build a blog in rails guide/cheatsheet
+<!-- to read comments clearly make sure text in lower right reads "markdown" -->
 
 open terminal
   cd into where your new blog should go
@@ -31,17 +32,17 @@ open terminal
     <!-- make initial commit -->
     git commit -m "initial commit"
 
-
-<!-- Think about new blog for a sec...what do you want to be able to do?
+Note..
+  Think about new blog for a sec...what do you want to be able to do?
         create a user (sign-up)
         login/logout (sign-in/sign-out)
         create posts
         edit/delete posts
         add comments
         admin user ability to delete comments (if spam or unwanted attention)
- -->
-
-<!-- Let's start with posts -->
+ 
+Note..
+  Let's start with posts 
 
 open terminal
   type..
@@ -49,7 +50,9 @@ open terminal
     <!-- can type rails g resource posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
     rails g controller posts
 
-<!-- Now let's put in some routes -->
+Note..
+  Now let's put in some routes 
+
 open sublime
   open config > routes.rb
   type ..
@@ -58,15 +61,19 @@ open sublime
     <!-- root = where it is going... posts = controller... index = action -->
     root "posts#index"
 
-<!-- Now you know the PostsController needs the index action -->
+Note..
+  Now you know the PostsController needs the index action
+
 open PostsController
   <!-- define index action -->
   type..
     def index
     end
 
-<!-- since we generated a controller vs resource we don't have a view > posts > index.html.erb file ...resource does this for you. -->
-<!-- Now we have to create the file manually -->
+Note..
+  <!-- since we generated a controller vs resource we don't have a view > posts > index.html.erb file ...resource does this for you. -->
+  <!-- Now we have to create the file manually -->
+
 open app > views > posts 
   open blank file 
   <!-- make sure saves to views > posts -->
@@ -76,13 +83,15 @@ open app > views > posts
     this is posts index file
   open browser and refresh to check for text on screen
 
-<!-- Next we want the ability to create new posts. -->
+Note..
+  Next we want the ability to create new posts.
+
 open PostsControlelr
   type..
     def new
     end
-<!-- sanity check -->
 open browser
+  <!-- sanity check -->
   open /posts/new
   <!-- notice we don't have a template, so let's create one -->
 
@@ -91,8 +100,8 @@ open new.html.erb
   create new post form
     <!-- check posts new.html.erb for code -->
 
-<!-- Now we have a new post form but not a model to go with it to save our data-->
 open terminal
+<!-- Now we have a new post form but not a model to go with it to save our data-->
   type..
   <!-- creates migration and model with info given -->
   rails g model Post title:string body:text
@@ -106,34 +115,38 @@ open PostController
     def create
     <!-- check code -->
     end
-<!-- add private params and check code -->
+    <!-- add private params and check code -->
 
 create posts show.html.erb file
-<!-- this is where the post lives -->
+  <!-- this is where the post lives -->
 open show.html.file
-<!-- check code -->
+  <!-- check code -->
 
 open PostController
-<!-- define show -->
+  <!-- define show -->
   type..
   def show
   <!-- check code -->
   end
 
-<!-- sanity check -->
-<!-- open browser and create post
-any errors review the code -->
+Note..
+  <!-- sanity check -->
+  <!-- open browser and create post
+  any errors review the code -->
 
-<!-- Now we want to list all of the posts at root of application -->
+Note..
+  <!-- Now we want to list all of the posts at root of application -->
+
 edit index action in PostController
-<!-- check code -->
-edit index.html.erb file
-<!-- check code -->
+  <!-- check code -->
 
-<!-- sanity check -->
-<!-- create multiple posts and make sure they display with the info you want -->
+edit index.html.erb file
+  <!-- check code -->
+  <!-- sanity check -->
+  <!-- create multiple posts and make sure they display with the info you want -->
 
 open terminal
+  <!-- if you would like to push to GitHub, create repository now, add remote and push -->
   git commit the changes
 
 
