@@ -3,6 +3,7 @@
 <head>
   <title>RailsBlogGuide</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -28,17 +29,30 @@
     <p class="sign_in">Admin Login</p>
   </div>
 
+  <!-- separates from sidebar content -->
   <div id="main_content">
     <div id="header">
+      
       <p>All Posts</p>
       <div class="buttons">
+        <!-- button to create new post -->
         <button class="button"><%=link_to "New Post", new_post_path %></button>
+        <!-- button to log out -->
         <button class="button">Log Out</button>
         </div>
     </div>
+    
+    <!-- anything rails does we know what is happening with a flash message -->
+    <% flash.each do |name, msg| %>
+      <!-- div with message with class of alert -->
+      <%= content_tag(:div, msg, class: "alert") %>
+      <% end %>
+    
+    <!-- yield tag in content div so posts will be next to sidebar instead of behind-->
+    <%= yield %>
+  
   </div>
 
-<%= yield %>
 
 </body>
 </html>
