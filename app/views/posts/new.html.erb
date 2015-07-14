@@ -6,7 +6,20 @@
   <!-- add form -->
   <!-- form_for method for :post, url for post path so it can submit the post -->
   <%= form_for :post, url: posts_path do |f| %>
-    
+   <!-- add some error messages to post so can fix if errors occur -->
+    <% if @post.errors.any? %>
+      <div id="errors">
+        <h2>
+          <!-- pluralize does anything past count of one pluralizes it -->
+          <%= pluralize(@post.errors.count, "error") %> Prevented this post from saving</h2> 
+            <!-- list out messages -->
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          </ul> 
+          <% end %>
+      </div>  
+    <% end %>
   <p>
     <!-- post title -->
     <%= f.label :title %><br>

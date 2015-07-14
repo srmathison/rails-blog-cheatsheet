@@ -6,15 +6,21 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new 
   end
 
   # in order to to save post
   def create
     # this creates/saves the post
     @post = Post.new(post_params)
-    @post.save
-
-    redirect_to @post 
+    
+    if @post.save
+      redirect_to @post
+    else
+      # we don't redirect here because the post doesn't save.
+      # render will keep content in place
+      render 'new'
+      end 
   end
 
   def show

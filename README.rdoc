@@ -167,7 +167,18 @@ Note..
   <!-- check code on application.scss _normalize.scss -->
 
 open terminal
-  git commit and merge with master
+  git commit and merge with master 
+
+Note..
+  We can create posts but can also create a post without entering any info into fields and pushing save post/publish. We don't want to be able to do that. We need validations that will throw errors if a field is left empty. Let's fix that
+
+open models > post.rb
+  type..
+    <!-- check code -->
+
+open posts > new.html.erb
+  fix post form to list errors
+  <!-- check code -->
 
 
 
