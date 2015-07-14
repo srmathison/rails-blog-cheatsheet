@@ -1,0 +1,33 @@
+ <!-- add form -->
+  <!-- form_for also reads...method for :post, url for post_path but rails is smart enough to call on @post so it can submit the post -->
+  <%= form_for @post do |f| %>
+   <!-- add some error messages to post so can fix if errors occur -->
+    <% if @post.errors.any? %>
+      <div id="errors">
+        <h2>
+          <!-- pluralize does anything past count of one pluralizes it -->
+          <%= pluralize(@post.errors.count, "error") %> Prevented this post from saving</h2> 
+            <!-- list out messages -->
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          </ul> 
+          <% end %>
+      </div>  
+    <% end %>
+  <p>
+    <!-- post title -->
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <!-- post text -->
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <!-- submit button -->
+    <%= f.submit "publish" %>
+  </p>
+
+  <% end %>

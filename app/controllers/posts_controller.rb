@@ -23,10 +23,35 @@ class PostsController < ApplicationController
       end 
   end
 
+  def edit
+   # find post by post id
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    # find post by post id
+    @post = Post.find(params[:id])
+
+    # 
+    if @post.update(params[:post].permit(:title, :body))
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
   def show
     # define @post
     # find post by post id
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    # find post by id
+    @post = Post.find(params[:id])
+    # call the destroy method on that post
+    @post.destroy
+    # redirect to root/home
+    redirect_to root_path
   end
 
   # security feature 

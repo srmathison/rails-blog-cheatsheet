@@ -8,6 +8,10 @@
   <p class="date">
     <!-- will show submitted time... and grab post -->
     Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+    <!-- this will add ability to edit a post -->
+    | <%= link_to 'Edit', edit_post_path(@post) %>
+    <!-- this will add ability to delete/destroy a post -->
+    | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %> 
   </p>
 
   <p class="body">

@@ -100,7 +100,8 @@ open browser
 create a view >posts new.html.erb file 
 open new.html.erb
   create new post form
-    <!-- check posts new.html.erb for code -->
+    <!-- check posts _form.html.erb for code -->
+    <!-- create this form in new.html.erb for now, you will see in a few steps when you move it to _form.html.erb and insert a render -->
 
 open terminal
 <!-- Now we have a new post form but not a model to go with it to save our data-->
@@ -179,6 +180,54 @@ open models > post.rb
 open posts > new.html.erb
   fix post form to list errors
   <!-- check code -->
+  <!-- create posts with missing info to test errors -->
+
+Note..
+  Now we want to be able to edit/delete our posts.
+
+open PostsController
+  type..
+    def edit
+    <!-- check code -->
+    end
+    def update
+    <!-- check code -->
+    end
+
+create posts > edit.html.erb
+create posts > _form.html.erb
+  this is where you will paste the form you previously created in new.html.erb 
+
+open new.html.erb
+  render the post now that the form is moved
+  <!-- check code -->
+
+open edit.html.erb
+  type..
+  <!-- check code -->
+
+open show.html.erb
+  add the ability to edit post
+  <!-- check code -->
+
+Note..
+  <!-- sanity check -->
+  try editing and updating posts
+  Now let's add the ability to delete/destroy a post and a link to destroy it
+
+open PostsController
+  type..
+  def destroy
+  <!-- check code -->
+  end
+
+open show.html.erb
+  add link to destroy post
+  <!-- check code -->
+
+
+
+
 
 
 
