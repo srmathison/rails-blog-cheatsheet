@@ -7,6 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="sidebar">
+    <!-- can add logo if you wish here as well but for this example I do not have one -->
+    <ul>
+      <li class="category">Website</li>
+      <!-- this will link to root of application, listing out blog posts -->
+      <li><%= link_to "Blog", root_path %></li>
+      <li>About</li>
+    </ul>
+
+    <ul>
+      <li class="category">Social</li>
+      <!-- insert links with href when ready to each social site -->
+      <li>Twitter</li>
+      <li>Github</li>
+      <li>Instagram</li>
+      <li>Facebook</li>
+    </ul>
+    <!-- add button so user can sign-in -->
+    <p class="sign_in">Admin Login</p>
+  </div>
+
+  <div id="main_content">
+    <div id="header">
+      <p>All Posts</p>
+      <div class="buttons">
+        <button class="button"><%=link_to "New Post", new_post_path %></button>
+        <button class="button">Log Out</button>
+        </div>
+    </div>
+  </div>
 
 <%= yield %>
 

@@ -1,5 +1,7 @@
 How to build a blog in rails guide/cheatsheet
-<!-- to read comments clearly make sure text in lower right reads "markdown" -->
+  <!-- to read comments clearly make sure text in lower right reads "markdown" -->
+  <!-- following video tutorial on https://www.youtube.com/watch?v=BI_VnnOLSKY
+  https://mackenziechild.me/12-in-12/2/ -->
 
 open terminal
   cd into where your new blog should go
@@ -47,7 +49,7 @@ Note..
 open terminal
   type..
     <!-- this creates the view dir but not the view file -->
-    <!-- can type rails g resource posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
+    <!-- can type rails g resources posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
     rails g controller posts
 
 Note..
@@ -71,8 +73,8 @@ open PostsController
     end
 
 Note..
-  <!-- since we generated a controller vs resource we don't have a view > posts > index.html.erb file ...resource does this for you. -->
-  <!-- Now we have to create the file manually -->
+  since we generated a controller vs resource we don't have a view > posts > index.html.erb file ...resource does this for you.
+  Now we have to create the file manually
 
 open app > views > posts 
   open blank file 
@@ -130,12 +132,12 @@ open PostController
   end
 
 Note..
-  <!-- sanity check -->
-  <!-- open browser and create post
-  any errors review the code -->
+  sanity check
+  open browser and create post
+  any errors review the code
 
 Note..
-  <!-- Now we want to list all of the posts at root of application -->
+  Now we want to list all of the posts at root of application
 
 edit index action in PostController
   <!-- check code -->
@@ -148,6 +150,19 @@ edit index.html.erb file
 open terminal
   <!-- if you would like to push to GitHub, create repository now, add remote and push -->
   git commit the changes
+
+Note..
+  If you would like to style what you have so far..
+  Create a new branch for styling and switch to that branch
+  <!-- the styling for this example follows the tutorial video I watched -->
+
+open > layout > application.html.erb
+  create a sidebar
+  <!-- check code -->
+
+Note..
+  for the styling of this tutorial the css/scss will not be pseudo coded. Can do at later point. Imported downloaded css/scss. 
+  <!-- check code on application.scss _normalize.scss -->
 
 
 
