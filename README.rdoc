@@ -61,6 +61,7 @@ open sublime
     resources :posts
     <!-- if you want the posts to be in the root of your blog -->
     <!-- root = where it is going... posts = controller... index = action -->
+    <!-- for now ignore the do method with nested comments, later when we get to comments you will type resources :comments  -->
     root "posts#index"
 
 Note..
@@ -164,7 +165,7 @@ open > layout > application.html.erb
   <!-- check code -->
 
 Note..
-  for the styling of this tutorial the css/scss will not be pseudo coded. Can do at later point. Imported downloaded css/scss. 
+  for the styling of this tutorial the css/scss will not be pseudo coded. Can do at later point. Imported downloaded css/scss. Checkout the tutorial website listed at top of README for access to original blog with css/normalize. 
   <!-- check code on application.scss _normalize.scss -->
 
 open terminal
@@ -224,6 +225,147 @@ open PostsController
 open show.html.erb
   add link to destroy post
   <!-- check code -->
+
+open terminal
+  git commit changes
+
+Note..
+  Now we can create a post, edit it, update it, and delete it. Let's create the ability to add a comment. For that we have to create a new model.
+
+open terminal
+  type..
+    rails g model Comment name:string body:text post:references
+
+open models > comment.rb
+  you can see it created to class with
+  belongs_to :post
+  you can see it created the migration file as well
+
+open terminal 
+  <!-- time to migrate! -->
+  type..
+  rake db:migrate
+
+Note..
+  Now we need to add association to the post
+
+open post.rb
+  type..
+    has_many :comments
+
+Note..
+  Next we need to add routes for our comments
+
+open config > routes.rb
+  nest the comments in posts
+  type..
+    <!-- check code -->
+    <!-- remember the nested comments we ignored a few steps back? -->
+
+Note..
+  Now let's generate a controller for comments
+
+open terminal
+  type..
+    rails g controller Comments
+
+Note..
+  Now we have to create a method in our controller to create a new comment
+
+open CommentsController
+  type..
+    def create
+    <!-- check code -->
+    end
+
+Note..
+  Next we're going to create a few partials then import them into the post show page
+
+create (in views > comments) the new partial pages
+  _form.html.erb
+  _comment.html.erb
+
+open comments > _form.html.erb
+  type..
+    <!-- check code -->
+
+open comments > _comment.html.erb
+  type..
+    <!-- check code -->
+
+open posts > show.html.erb
+  add comments
+  <!-- check code -->
+
+Note..
+  We want the ability to delete comments.
+
+open CommentsController
+  type..
+    def destroy
+    <!-- check code -->
+    end
+
+open _comment.html.erb
+  add link to delete comment
+  <!-- check code -->
+  <!-- try deleting comments! -->
+
+Note..
+  We need to make sure that if you delete a post, all of the comments get deleted as well. Otherwise the comments will take up space on the database. 
+
+open model > post.rb
+  add dependent destroy
+    <!-- check code -->
+
+open terminal
+  git commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

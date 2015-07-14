@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   # validates there is a body content entered
   validates :body, presence: true
 
+  has_many :comments, dependent: :destroy
   
 
 end

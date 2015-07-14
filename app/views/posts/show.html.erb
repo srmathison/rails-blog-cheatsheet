@@ -17,5 +17,15 @@
   <p class="body">
   <%= @post.body %>
   </p>
+  <!-- add comments here -->
+  <div id="comments">
+    <!-- count the number of comments -->
+    <h2><%= @post.comments.count %> Comments </h2>
+    <!-- this is grabbing _comments.html.erb -->
+    <%= render @post.comments %>
+    <!-- this is grabbing _form.html.erb -->
+    <h3> Add a comment: </h3>
+    <%= render "comments/form" %> 
+  </div>
 
 </div>
