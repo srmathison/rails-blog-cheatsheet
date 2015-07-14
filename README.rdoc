@@ -49,7 +49,7 @@ Note..
 open terminal
   type..
     <!-- this creates the view dir but not the view file -->
-    <!-- can type rails g resource posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
+    <!-- can type rails g resources posts alternatively as well that will provide a bit more for blog ...checkout guides.rubyonrails.org for reference -->
     rails g controller posts
 
 Note..
