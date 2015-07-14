@@ -159,10 +159,15 @@ Note..
 open > layout > application.html.erb
   create a sidebar
   <!-- check code -->
+  create main content
+  <!-- check code -->
 
 Note..
   for the styling of this tutorial the css/scss will not be pseudo coded. Can do at later point. Imported downloaded css/scss. 
   <!-- check code on application.scss _normalize.scss -->
+
+open terminal
+  git commit and merge with master
 
 
 

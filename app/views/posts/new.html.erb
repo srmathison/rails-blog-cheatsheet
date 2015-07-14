@@ -1,24 +1,27 @@
-<!-- heading for new posts -->
-<h1>New Posts</h1>
+<!-- page wrapper so can allow for styling -->
+<div id="page_wrapper">
+  <!-- heading for new posts -->
+  <h1>New Posts</h1>
 
-<!-- add form -->
-<!-- form_for method for :post, url for post path so it can submit the post -->
-<%= form_for :post, url: posts_path do |f| %>
-  
+  <!-- add form -->
+  <!-- form_for method for :post, url for post path so it can submit the post -->
+  <%= form_for :post, url: posts_path do |f| %>
+    
   <p>
-  <!-- post title -->
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
+    <!-- post title -->
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </p>
   <p>
-  <!-- post text -->
-  <%= f.label :body %><br>
-  <%= f.text_area :body %>
+    <!-- post text -->
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
   </p>
   <p>
-  <!-- submit button -->
-  <%= f.submit "publish" %>
+    <!-- submit button -->
+    <%= f.submit "publish" %>
   </p>
 
-<% end %>
+  <% end %>
+</div>
 

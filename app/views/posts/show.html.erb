@@ -1,13 +1,17 @@
-<!-- show title, date/time and body of post -->
-<h1 class="title">
-  <%= @post.title %>
-</h1>
+<!-- post_content to allow for styling -->
+<div id="post_content">
+  <!-- show title, date/time and body of post -->
+  <h1 class="title">
+    <%= @post.title %>
+  </h1>
 
-<p class="date">
-  <!-- will show submitted time... and grab post -->
-  Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-</p>
+  <p class="date">
+    <!-- will show submitted time... and grab post -->
+    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+  </p>
 
-<p class="body">
-<%= @post.body %>
-</p>
+  <p class="body">
+  <%= @post.body %>
+  </p>
+
+</div>
