@@ -358,6 +358,38 @@ open layouts > application.html.erb
   add current page if and elsif 
   <!-- check code -->
 
+open terminal
+  git commit
+
+Note..
+  final thing is add a user. make sure just not anyone can see the posts and make comments.
+
+open Gemfile
+  add gem 'devise', '~> 3.4.0'
+
+open terminal
+  bundle install
+  <!-- if gem is already on system but you want to use devise on your project use the install code in terminal rails g devise:install and follow instructions  -->
+  rails g devise:views
+  rails g devise User
+  rake db:migrate
+  restart server
+  
+Note..
+  This is the end of my notes for this process. Feel free to experiment with hiding buttons and such whether the user is signed in or not. The video tutuorial lightly touches this subject. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
