@@ -113,7 +113,7 @@ open terminal
   <!-- migrate database -->
   rake db:migrate
 
-open PostController
+open PostsController
   <!-- in order to create new posts have to define create -->
   type..
     def create
